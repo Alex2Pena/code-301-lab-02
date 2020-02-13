@@ -19,9 +19,9 @@ Estimate of time needed to complete: ____1:00:00____________
 
 Start time: 10:48:00____
 
-Finish time: _____
+Finish time: 12:33:00 next day_____
 
-Actual time needed to complete: _____
+Actual time needed to complete: _10 hours____
 
 
 
@@ -32,8 +32,8 @@ Number and name of feature: ____Style the Application_________
 
 Estimate of time needed to complete: ____1:00:00______________
 
-Start time: _____
+Start time: __12:36:00___
 
-Finish time: _____
+Finish time: __12:56:00___
 
-Actual time needed to complete: _____
+Actual time needed to complete: _20 minutes____
