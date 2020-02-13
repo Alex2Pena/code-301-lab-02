@@ -8,6 +8,7 @@ $.ajax('/page-1.json', {method: 'GET' , dataType: 'JSON'})
     })
     uniqueArray();
     addDropDownMenu();
+    userSelection();
 })
 
 //Globar variables
@@ -38,9 +39,11 @@ Horn.prototype.render = function(){
     const $newOption = $('<option></option>');
     $newSection.html(hornTemplate);
     $newSection.find('h2').text(this.title);
+    $newSection.addClass('section').attr('class', this.keyword);
     $newSection.find('img').attr('src', this.image_url);
     $newSection.find('p').text(this.description);
     $('main').append($newSection);
+
     
 }
 
@@ -50,17 +53,39 @@ const uniqueArray = () => {
             keywordsArray.push(horn.keyword)
         }
     })
-    
+
 }
 
 function addDropDownMenu(){
     const $dropdown = $('select');
     keywordsArray.forEach(keywords => {
-        const $newOption = $(`<option value = '${keywords}'>${keywords}</option>`)
+        console.log(keywords)
+        const $newOption = $(`<option value = '${keywords}'>${keywords}</option>`);
         $dropdown.append($newOption);
-    })
-}
+    });
+};
 
-console.log(hornsArray);
-console.log(keywordsArray);
+let userSelection = () => {
+
+    $('select').on('change', function() {
+        let selected = this.value;
+        console.log('value',selected);
+        $('section').hide();
+        hornsArray.forEach(image => {
+            // console.log('image',image);
+            // console.log('y',image.keyword)
+            // console.log('select', selected);
+            if(selected === image.keyword) {
+                var keyword = selected
+                // var x = document.getElementsByClassName(keyword);
+                $("." + keyword).show();
+                
+            };
+        });
+    });
+};
+
+
+// console.log(hornsArray);
+// console.log(keywordsArray);
 
